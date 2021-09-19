@@ -5,18 +5,18 @@ import sys
 
 # First part
 
-if len(os.listdir('/home/administrator/Desktop/00010-GCS-u_R_0_IW/ft_reference')) == 0:
+if len(os.listdir('./ft_reference')) == 0:
     print("Directory missing: ft_reference")
     sys.exit()
 
-if len(os.listdir('/home/administrator/Desktop/00010-GCS-u_R_0_IW/ft_run')) == 0:
+if len(os.listdir('./ft_run')) == 0:
     print("Directory missing: ft_run")
     sys.exit()
 
 # Second part
 
-dir1 = os.listdir('/home/administrator/Desktop/00010-GCS-u_R_0_IW/ft_reference/1')
-dir2 = os.listdir('/home/administrator/Desktop/00010-GCS-u_R_0_IW/ft_run/1')
+dir1 = os.listdir('./ft_reference/1')
+dir2 = os.listdir('./ft_run/1')
 
 duplicates = set(dir1) & set(dir2)
 
@@ -39,7 +39,7 @@ f.close()
 
 # Third part
 
-file_path = "/home/administrator/Desktop/00010-GCS-u_R_0_IW/ft_run/1/1.stdout"
+file_path = "./ft_run/1/1.stdout"
 
 word0 = 'error'
 word1 = 'Error' 
@@ -69,7 +69,7 @@ with open(file_path) as file:
 
 word = 'Memory Working Set'  
  
-inp = open('/home/administrator/Desktop/00010-GCS-u_R_0_IW/ft_run/1/1.stdout').readlines()
+inp = open('./ft_run/1/1.stdout').readlines()
 
 orig_stdout = sys.stdout 
 f = open('report1.txt', 'w')
@@ -85,13 +85,13 @@ sys.stdout = orig_stdout
 f.close()
 
 
-with open('/home/administrator/Desktop/report1.txt', 'r') as f1:
+with open('./report1.txt', 'r') as f1:
     lines = f1.readlines()
 lines = [line.replace(' ', '') for line in lines]
-with open('/home/administrator/Desktop/report1.txt', 'w') as f1:
+with open('./report1.txt', 'w') as f1:
     f1.writelines(lines)
 
-with open('/home/administrator/Desktop/report1.txt') as f2:
+with open('./report1.txt') as f2:
     n = []
     for line in f2:
         line = line.replace(",", ".")   
@@ -106,7 +106,7 @@ with open('/home/administrator/Desktop/report1.txt') as f2:
 
 word = 'Memory Working Set'  
 
-inn = open('/home/administrator/Desktop/00010-GCS-u_R_0_IW/ft_reference/1/1.stdout').readlines()
+inn = open('./ft_reference/1/1.stdout').readlines()
 
 orig_stdout = sys.stdout 
 f3 = open('report2.txt', 'w')
@@ -122,13 +122,13 @@ sys.stdout = orig_stdout
 f3.close()
 
 
-with open('/home/administrator/Desktop/report2.txt', 'r') as f4:
+with open('./report2.txt', 'r') as f4:
     lines = f4.readlines()
 lines = [line.replace(' ', '') for line in lines]
-with open('/home/administrator/Desktop/report2.txt', 'w') as f5:
+with open('./report2.txt', 'w') as f5:
     f5.writelines(lines)
 
-with open('/home/administrator/Desktop/report2.txt') as f6:
+with open('./report2.txt') as f6:
     m = []
     for line in f6:
         line = line.replace(",", ".")   
@@ -141,13 +141,13 @@ with open('/home/administrator/Desktop/report2.txt') as f6:
 
 x = ((max(m)/max(n))*100)
 if x < 50:
-    print("/home/administrator/Desktop/00010-GCS-u_R_0_IW/ft_run different: Memory Working Set Peak" + " ft_run = " + str(max(n)) + " ft_reference= " + str(max(m)) + " rel.diff= " + str(round(x,2)))
+    print("In ft_run different: Memory Working Set Peak" + " ft_run = " + str(max(n)) + " ft_reference= " + str(max(m)) + " rel.diff= " + str(round(x,2)))
 
 # Four part (2)
 
 word1 = 'MESH::Bricks:'  
  
-ink = open('/home/administrator/Desktop/00010-GCS-u_R_0_IW/ft_run/1/1.stdout').readlines()
+ink = open('./ft_run/1/1.stdout').readlines()
 
 orig_stdout = sys.stdout 
 f8 = open('report3.txt', 'w')
@@ -163,13 +163,13 @@ sys.stdout = orig_stdout
 f8.close()
 
 
-with open('/home/administrator/Desktop/report3.txt', 'r') as f10:
+with open('./report3.txt', 'r') as f10:
     lines = f10.readlines()
 lines = [line.replace(' ', '') for line in lines]
-with open('/home/administrator/Desktop/report3.txt', 'w') as f10:
+with open('./report3.txt', 'w') as f10:
     f10.writelines(lines)
 
-with open('/home/administrator/Desktop/report3.txt') as f20:
+with open('./report3.txt') as f20:
     y = []
     for line in f20:
         line = line.replace(",", ".")   
@@ -183,7 +183,7 @@ with open('/home/administrator/Desktop/report3.txt') as f20:
     #print(y[len(y)-1])
 
 
-inz = open('/home/administrator/Desktop/00010-GCS-u_R_0_IW/ft_reference/1/1.stdout').readlines()
+inz = open('./ft_reference/1/1.stdout').readlines()
 
 orig_stdout = sys.stdout 
 f9 = open('report4.txt', 'w')
@@ -199,13 +199,13 @@ sys.stdout = orig_stdout
 f9.close()
 
 
-with open('/home/administrator/Desktop/report4.txt', 'r') as f11:
+with open('./report4.txt', 'r') as f11:
     lines = f11.readlines()
 lines = [line.replace(' ', '') for line in lines]
-with open('/home/administrator/Desktop/report4.txt', 'w') as f11:
+with open('./report4.txt', 'w') as f11:
     f11.writelines(lines)
 
-with open('/home/administrator/Desktop/report4.txt') as f21:
+with open('./report4.txt') as f21:
     w = []
     for line in f21:
         line = line.replace(",", ".")   
@@ -220,4 +220,4 @@ with open('/home/administrator/Desktop/report4.txt') as f21:
 
 x = (y[len(y)-1]/w[len(w)-1])*100
 if x < 90:
-    print("/home/administrator/Desktop/00010-GCS-u_R_0_IW different: Total of bricks" + " ft_run = " + str(max(n)) + " ft_reference= " + str(max(m)) + " rel.diff= " + str(round(x,2)))
+    print("In 00010-GCS-u_R_0_IW different: Total of bricks" + " ft_run = " + str(max(n)) + " ft_reference= " + str(max(m)) + " rel.diff= " + str(round(x,2)))
